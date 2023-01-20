@@ -1,0 +1,19 @@
+@import '../../myVariable.scss';
+.cells,.selected-cells{
+    @include cell-format;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
+}
+.date-cells{
+    .cells:hover{
+    background-color: rgba(128, 128, 128, 0.25);
+    }
+}
+.date-cells{
+    .selected-cells{
+        background-color: #a3c2b7;
+        color: black;
+    }
+}

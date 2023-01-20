@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=EB+Garamond:wght@400;600&display=swap');
+.month-calendar{
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    padding: 25px;
+    width: 300px;
+}

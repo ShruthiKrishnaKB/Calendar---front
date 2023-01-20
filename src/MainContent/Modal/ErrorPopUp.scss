@@ -1,0 +1,45 @@
+@import '../../myVariable.scss';
+.none{
+    display: none;
+}
+.error-pop-up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color:black;
+    z-index: 3;
+    position:fixed;
+    bottom: 25px;
+    right:35%;
+    left: 35%;
+    height: 50px;
+    box-shadow: 1px 1px 15px gray;
+    .icon{
+        color: red;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+    cursor: pointer;
+}
+
+@keyframes flash{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.close-pop-up{
+    .close-icon{
+        padding: 5px;
+        // color:red;
+        font-size: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

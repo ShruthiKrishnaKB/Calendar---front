@@ -1,0 +1,20 @@
+@import '../../myVariable.scss';
+.delete-modal-background{
+    @include modal-background;
+    z-index: 2;
+}
+.delete-modal-container{
+    @include modal-container;
+    width: 25%;
+    height: 25%;
+}
+.delete-modal-body{
+    @include modal-body;
+    display: flex;
+}
+.delete-modal-footer{
+    @include modal-footer;
+    button{
+        cursor: pointer;
+    }
+}

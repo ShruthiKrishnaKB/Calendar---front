@@ -1,0 +1,21 @@
+@import '../myVariable.scss';
+.calendar-days{
+    width: 98%;
+    height: 98%;
+    font-size: 21px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-auto-rows: 1fr;
+}
+.calendar-days-of-week{
+    @include cell-format;
+    height: 100%;
+    width: 100%;
+}
+.date-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+

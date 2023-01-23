@@ -1,0 +1,42 @@
+@import '../../myVariable.scss';
+.main-calendar{
+    padding-left: 300px;
+    color: black;
+}
+.main-calendar .calendar-view{
+    width: calc(89vw - 460px);
+    height: calc(100vh - 102px);
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow:$myBoxShadow ;
+}
+.main-calendar .month-view{
+    .event-month-view{
+        background-color: #133C55;
+        color: white;
+        font-size: 18px;
+        width: 120px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        border-radius: 4px;
+    }
+    .see-more{
+        @extend .event-month-view;
+        background-color: inherit;
+        // parent - month-view - date-cells
+        color: #133C55;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            font-size: 16px;
+        }
+    }
+}

@@ -16,15 +16,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom:1px;
     border:1px solid #14393c;
+    font-size: 16px;
     .icon{
-        font-size: 14px;
+        font-size: 13px;
         cursor: pointer;
     }
-    span{
+    .delete-update-icon{
+        width: 45px;
+        display:flex;
+        padding: 0 5px;
         span{
             padding: 0 5px;
         }
     }
+}
+.enlarge{
+    @extend .display-event;
+}
+.enlarge:hover{
+    height: 15px !important;
+}
+.event-name-day-view{
+    word-break: break-all;
 }

@@ -12,6 +12,22 @@
     border-top-right-radius: 25px;
     box-shadow:5px -5px 20px black ;
 }
+.present-time-wrapper{
+    width: calc(85vw - 510px);
+    color: blue;
+    .circle-icon{
+        position: relative;
+        padding-left: 68px;
+    }
+    .present-time{
+        position: relative;
+        height: 2px;
+        border: none;
+        width: 100%;
+        left: 80px;
+        background-color: blue;
+    }
+}
 .day-view{
     padding-left: 300px;
 }
@@ -25,7 +41,16 @@
     width: calc(80vw - 400px);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-
+}
+@media screen and (max-width: 1440px) {
+    .current-day{
+        width: calc(78vw - 400px);
+    }
+}
+@media screen and (max-width: 1024px) {
+    .current-day{
+        width: calc(75vw - 400px);
+    }
 }
 .time-interval{
     display: flex;
@@ -44,12 +69,6 @@
     justify-content: center;
     align-items: flex-end;
 }
-hr{
-        width: calc(85vw - 500px);
-        height: 0.01ex;
-        background-color:rgba(128, 128, 128, 0.5);
-        border: none;
-    }
 .time-format{
     width: 45px;
     text-align: end;
@@ -68,4 +87,7 @@ hr{
     justify-content: center;
     align-items: center;
     margin-left: 50px;
+}
+.circle-icon{
+    font-size: 12px;
 }

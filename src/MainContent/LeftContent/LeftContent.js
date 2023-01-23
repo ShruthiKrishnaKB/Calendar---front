@@ -1,13 +1,13 @@
 import React from "react";
-import Calendar from "../../Calendar/Calendar";
+import './LeftContent.scss';
 import SelectedDate from "../../Calendar/SelectedDate";
-import './MonthCalendar.scss';
-const MonthCalendar = ()=>{
+import SideCalendar from "./SideCalendar";
+const LeftContent = ()=>{
     return (
         <div className="month-calendar">
             <SelectedDate/>
-            <Calendar/>
+            <SideCalendar/>
         </div>
         );
 }
-export default MonthCalendar
+export default LeftContent

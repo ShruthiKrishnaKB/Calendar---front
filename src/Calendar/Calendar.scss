@@ -1,54 +1,21 @@
 @import '../myVariable.scss';
-.calendar-view{
-    width: 250px;
-    height: 250px;
-    font-size: 13px;
-    box-shadow: $myBoxShadow;
-    display: grid;
-}
-.calendar-top-row{
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-.claendar-top-row-month{
-    flex: 3;
-    box-shadow:$boxShadowDark;
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 5px 10px 0;
-
-}
-.calendar-top-row-year{
-    flex: 2;
-    box-shadow:$boxShadowDark;
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 10px 5px;
-}
-.calendar-days-of-week{
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
-}
-.calendar-dates{
+.calendar-days{
+    width: 98%;
+    height: 98%;
+    font-size: 21px;
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-auto-rows: 1fr;
-    padding-left: 10px;
-    gap: 2px;
 }
-.days-of-week{
-    font-weight: bold;
+.calendar-days-of-week{
+    @include cell-format;
+    height: 100%;
+    width: 100%;
 }
-.arrow:hover{
-    cursor: pointer;
+.date-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+

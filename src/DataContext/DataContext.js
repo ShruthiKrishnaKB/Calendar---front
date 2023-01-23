@@ -5,9 +5,10 @@ const DataContextProvider = ({children}) =>{
     const [event,setEvent]=useState([]);
     const [openCreateModal,setOpenCreateModal]=useState(false);
     const [errorPopUp,setErrorPopUp] = useState('');
-
+    const [isId,setIsId] = useState('');
+    const [isEditEvent,setIsEditEvent]=useState(false);
     return(
-        <DataContext.Provider value={{currentDate,setCurrentDate,event,setEvent,openCreateModal,setOpenCreateModal,errorPopUp,setErrorPopUp}}>
+        <DataContext.Provider value={{currentDate,setCurrentDate,event,setEvent,openCreateModal,setOpenCreateModal,errorPopUp,setErrorPopUp,isId,setIsId,isEditEvent,setIsEditEvent}}>
             {children}
         </DataContext.Provider>
     )

@@ -17,26 +17,16 @@
     left: 35%;
     height: 50px;
     box-shadow: 1px 1px 15px gray;
+    cursor: pointer;
     .icon{
         color: red;
         padding-left: 10px;
         font-size: 20px;
     }
-    cursor: pointer;
-}
-
-@keyframes flash{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
 }
 .close-pop-up{
     .close-icon{
         padding: 5px;
-        // color:red;
         font-size: 10px;
         position: absolute;
         top: 0;

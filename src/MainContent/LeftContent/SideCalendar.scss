@@ -1,0 +1,76 @@
+@import '../../myVariable.scss';
+.side-calendar .calendar-view{
+    width: 250px;
+    height: 250px;
+    font-size: 13px;
+    box-shadow: $myBoxShadow;
+    display: grid;
+}
+.side-calendar .calendar-days{
+    padding-left: 5px;
+    font-size: 13px;
+}
+.calendar-top-row{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    span{
+        user-select: none;
+    }
+}
+.claendar-top-row-month{
+    flex: 3;
+    box-shadow:$boxShadowDark;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5px 10px 0;
+
+}
+.calendar-top-row-year{
+    flex: 2;
+    box-shadow:$boxShadowDark;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px 5px;
+}
+.side-calendar .calendar-days-of-week{
+    height: 25px;
+    width: 25px;
+}
+.side-calendar .month-view{
+    display: none;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+.side-calendar{
+    .cells{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+    }
+    .calendar-dates{
+        .date-cells{
+            .cells:hover{
+            background-color: rgba(128, 128, 128, 0.25);
+            border-radius: 100%;
+            }
+        }
+    }
+    .selected-cells{
+        @extend .cells;
+        background-color: #F3E0EC;
+        color: black;
+        font-weight: bolder;
+        border-radius: 100%;
+    }
+}

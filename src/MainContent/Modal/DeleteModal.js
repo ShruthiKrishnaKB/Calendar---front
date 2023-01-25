@@ -12,8 +12,8 @@ const DeleteModal = () =>{
                     Are you sure you want to delete?
                 </div>
                 <div className="delete-modal-footer">
-                    <button onClick={()=>deleteEvent(isId)}>Yes</button>
                     <button onClick={()=>setOpenDeleteModal(false)}>No</button>
+                    <button onClick={()=>deleteEvent(isId)}>Yes</button>
                 </div>
             </div>
         </div>

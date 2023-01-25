@@ -26,7 +26,7 @@ const DayInterval=()=>{
                     <div><b>{currentDate.getDate()}</b></div>
                 </div>
                 <div className="time-line">
-                    <div className={currentTime===0 ? "no-event": "present-time-wrapper"}><FontAwesomeIcon icon={faCircle} className="circle-icon" style={{top:parseInt(currentTime)+12}}/> <div className="present-time" style={{top:currentTime}}></div></div>
+                    <div className={currentTime===0 ? "no-event": "present-time-wrapper"} ><FontAwesomeIcon icon={faCircle} className="circle-icon" style={{top:parseInt(currentTime)+12}}/> <div className="present-time" style={{top:currentTime}}></div></div>
                     <DisplayEvent/>
                     {eachHourOfDay.map((day,index)=>{
                         return(

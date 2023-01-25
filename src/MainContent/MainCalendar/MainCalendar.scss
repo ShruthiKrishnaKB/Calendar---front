@@ -16,6 +16,7 @@
 }
 .main-calendar .month-view{
     .event-month-view{
+        box-sizing: border-box;
         background-color: #133C55;
         color: white;
         font-size: 18px;

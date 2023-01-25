@@ -42,7 +42,7 @@ const Calendar =()=>{
                                                 const eventTitle = filterItem.eventName;
                                                 return(
                                                     <div className='event-month-view-wrapper' key={index}>
-                                                    <div className="event-month-view"> {eventTitle.length>15 ? eventTitle.substring(0,14)+"..." : eventTitle}</div>
+                                                    <div className="event-month-view"> {eventTitle.length>15 ? eventTitle.substring(0,12)+"..." : eventTitle}</div>
                                                     </div>
                                                 )})}
                                             {filterEvent && filterEvent.length>=3 &&

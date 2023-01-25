@@ -26,6 +26,7 @@ const ListAppointment=()=>{
                             <span> {(end>=12) ? endTime+" pm" : endTime+" am"}</span></div>
                             <div className="event-name">{item.descriptionOfEvent}</div>
                             </li>
+                            
                     )})}
                 </div>
         </div>

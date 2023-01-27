@@ -1,14 +1,13 @@
+import React, { useContext, useState } from "react";
+import './CreateUpdateModal.scss';
 import { format } from "date-fns";
 import moment from "moment";
-import React, { useContext, useState } from "react";
 import { DataContext } from "../../DataContext/DataContext";
 import { ServiceContext } from "../../DataContext/Services";
-import './CreateUpdateModal.scss';
 
 const CreateUpdateModal = ()=>{
     const {isEditEvent,currentDate,setErrorPopUp,setOpenCreateModal,setIsEditEvent} = useContext(DataContext);
     const {editEvent,createEvents}= useContext(ServiceContext);
-    // const [errorValidate,setErrorValidate] = useState({title:"",inValid:""});
     const [errorValidate,setErrorValidate] = useState('');
     const handleTitle=()=>{
         return isEditEvent ? isEditEvent[0].eventName : '';
@@ -33,7 +32,6 @@ const CreateUpdateModal = ()=>{
         let isFormValid=true;
         if(newEvent.eventName.trim()==="" || newEvent.eventDate.trim()==="" || newEvent.startTimeHrMin.trim()==="" || newEvent.endTimeHrMin.trim()===""){
             isFormValid = false;
-            // setErrorValidate({...errorValidate,title:"Please fill out this field"});
             setErrorValidate("Please fill out this field");
         }
         return isFormValid;
@@ -45,7 +43,6 @@ const CreateUpdateModal = ()=>{
     const [description, setDescription]=useState(handleDescription());
     const isSubmit=()=>{
         const newEvent = {
-            // id:isEditEvent,
             eventName:title,
             eventDate:eventDate,
             startTimeHrMin:startTime,

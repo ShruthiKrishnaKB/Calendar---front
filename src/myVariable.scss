@@ -1,7 +1,7 @@
-$boxShadowDark: 5px 5px 10px black;
-$myBoxShadow : 8px -3px 15px black;
-$boxShadowButton: 3px 3px 8px black;
-$boxShadowButtonHover: 8px 3px 15px black;
+$boxShadowDark: 3px 3px 10px rgba(0, 0, 0, 0.5);
+$myBoxShadow : 3px -3px 10px rgba(0, 0, 0, 0.5);
+$boxShadowButton: 3px 3px 8px rgba(0, 0, 0, 0.5);
+$boxShadowButtonHover: 8px 3px 15px rgba(0, 0, 0, 0.7);
 
 @mixin cell-format{
     display: flex;

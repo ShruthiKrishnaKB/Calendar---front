@@ -20,7 +20,6 @@ const Calendar =()=>{
         setCurrentDate(clickDate);
     }
     const DaysOfWeek =["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
-
     return(
             <div className='calendar-view'>
                 <div className='calendar-days'>

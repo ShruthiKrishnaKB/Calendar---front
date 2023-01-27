@@ -9,7 +9,7 @@ const ListAppointment=()=>{
     useEffect(()=>{
         getAllEventByDate(moment(currentDate,"DD-MM-YYYY").format("YYYY-MM-DD"));
         // eslint-disable-next-line
-    },[currentDate,getByDate])
+    },[currentDate])
     return(
         <div className="list-item">
             <div className="list-item-wrapper">

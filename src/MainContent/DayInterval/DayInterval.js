@@ -16,7 +16,6 @@ const DayInterval=()=>{
     })
     useEffect(()=>{
         format(currentDate,"yyyy LL dd") === format(new Date(),"yyyy LL dd") ? setCurrentTime((new Date().getHours()*45.8) + ((new Date().getMinutes()/60)*(45.8))+46) : setCurrentTime(0)
-
     },[currentDate])
     return(
         <div className="day-view">

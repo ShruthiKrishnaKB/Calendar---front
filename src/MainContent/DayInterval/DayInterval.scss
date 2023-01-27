@@ -1,3 +1,4 @@
+@import "../../myVariable.scss";
 .day-interval{
     overflow: auto;
     overflow-x: hidden;
@@ -10,7 +11,7 @@
     height: calc(100vh - 102px);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    box-shadow:5px -5px 20px black ;
+    box-shadow:$myBoxShadow;
 }
 .present-time-wrapper{
     width: calc(85vw - 510px);
@@ -32,19 +33,21 @@
     padding-left: 300px;
 }
 .current-day{
+    box-sizing: border-box;
     position: fixed;
     z-index:1;
     background-color: white;
     font-size: larger;
     align-self: flex-start;
     padding-left: 75px;
-    width: calc(80vw - 400px);
+    width: calc(85vw - 400px);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    padding-top: 15px;
 }
 @media screen and (max-width: 1440px) {
     .current-day{
-        width: calc(78vw - 400px);
+        width: calc(83vw - 400px);
     }
 }
 @media screen and (max-width: 1024px) {

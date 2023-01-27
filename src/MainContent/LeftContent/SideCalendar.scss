@@ -2,18 +2,18 @@
 .side-calendar .calendar-view{
     width: 250px;
     height: 250px;
-    font-size: 13px;
+    font-size: 14px;
     box-shadow: $myBoxShadow;
     display: grid;
 }
 .side-calendar .calendar-days{
-    padding-top: 10px;
     padding-left: 5px;
-    font-size: 13px;
-    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 3px;
 }
 .calendar-top-row{
-    font-size: 14px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     span{
@@ -30,7 +30,6 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 5px 10px 0;
-    border-radius: 5px;
 
 }
 .calendar-top-row-year{
@@ -42,8 +41,6 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 0 10px 5px;
-    border-radius: 5px;
-
 }
 .side-calendar .calendar-days-of-week{
     height: 25px;

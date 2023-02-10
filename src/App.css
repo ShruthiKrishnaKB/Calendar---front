@@ -5,9 +5,11 @@
 body{
   font-size: 18px;
   background: #a3c2b7;
+  /* background: rgb(97, 173, 188); */
   background: -moz-linear-gradient(top, #a3c2b7 0%, #14393c 50%, #021213 100%);
   background: -webkit-linear-gradient(top, #a3c2b7 0%,#14393c 50%,#021213 100%);
   background: linear-gradient(to bottom, #a3c2b7 0%,#14393c 50%,#021213 100%);
+  background-image: url(http://w4.wallls.com/uploads/high-thumbnail/201711/21/157172.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;

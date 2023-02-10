@@ -5,6 +5,7 @@
 }
 .modal-container{
     @include modal-container;
+    height: 55%;
 }
 .modal-header{
     flex: 15%;
@@ -31,6 +32,9 @@
     label{
         width:100px;
         font-weight: 550;
+        span{
+            color: red;
+        }
     }
     input{
         width:250px;
@@ -43,6 +47,16 @@
     input:focus,input:active{
         border:2px solid rgb(20, 57, 60);
     }
+}
+.input-error-wrapper{
+    display: flex;
+    flex-direction: column
+}
+.form-validation{
+    width: 250px ;
+    font-weight: normal;
+    font-size: small;
+    color: red;
 }
 .modal-footer{
     @include modal-footer;

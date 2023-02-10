@@ -1,21 +1,25 @@
+import React, { createContext, useContext, useState } from "react";
 import { formatISO, parseISO } from "date-fns";
 import moment from "moment";
-import React, { createContext, useContext, useState } from "react";
 import uuid from "react-uuid";
 import Axios from "../MainContent/Axios/Axios";
 import { DataContext } from "./DataContext";
 const ServiceContext =  createContext();
 const ServiceContextProvider = ({children})=>{
-    const {event,setEvent,setErrorPopUp,isEditEvent} = useContext(DataContext);
+    const {event,setEvent,setErrorPopUp,isEditEvent,currentDate} = useContext(DataContext);
     const [openDeleteModal,setOpenDeleteModal] = useState(false);
     const [getByDate,setGetByDate]= useState('');
     const getAllEvent = async () => {
         const response =  await Axios.get("api/appointments");
         response && setEvent(response.data,...event);
     }
+    const getAllEventByDate = async (date) => {
+        const response =await Axios.get("api/appointments/date?date="+date);
+        response && setGetByDate(response.data);
+    }
     const deleteEvent= async (delId)=>{
         await Axios.delete(`api/appointments/${delId}`)
-        getAllEvent();
+        getAllEvent()  && getAllEventByDate(moment(currentDate,"DD-MM-YYYY").format("YYYY-MM-DD"));
         setOpenDeleteModal(false);
     }
     const editEvent = async (myEvent)=>{
@@ -29,7 +33,7 @@ const ServiceContextProvider = ({children})=>{
                 descriptionOfEvent:myEvent.descriptionOfEvent, 
             }
             await Axios.put("api/appointments",request);
-            getAllEvent();
+            getAllEvent() && getAllEventByDate(moment(currentDate,"DD-MM-YYYY").format("YYYY-MM-DD"));
         }catch(error){
             setErrorPopUp(error.response.data);
         }
@@ -45,15 +49,11 @@ const ServiceContextProvider = ({children})=>{
                 descriptionOfEvent:myEvent.descriptionOfEvent, 
             }
             const response = await Axios.post("api/appointments",request);
-            response.data && getAllEvent();
+            response.data && getAllEvent() && getAllEventByDate(moment(currentDate,"DD-MM-YYYY").format("YYYY-MM-DD"));
         }
         catch(error){
             setErrorPopUp(error.response.data);
         }
-    }
-    const getAllEventByDate = async (date) => {
-        const response =await Axios.get("api/appointments/date?date="+date);
-        response && setGetByDate(response.data);
     }
     return(
         <ServiceContext.Provider value={{getAllEvent,deleteEvent,setOpenDeleteModal,openDeleteModal,editEvent,createEvents,getAllEventByDate,getByDate,setGetByDate}}>

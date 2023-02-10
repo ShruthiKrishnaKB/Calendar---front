@@ -16,7 +16,6 @@ const DayInterval=()=>{
     })
     useEffect(()=>{
         format(currentDate,"yyyy LL dd") === format(new Date(),"yyyy LL dd") ? setCurrentTime((new Date().getHours()*45.8) + ((new Date().getMinutes()/60)*(45.8))+46) : setCurrentTime(0)
-
     },[currentDate])
     return(
         <div className="day-view">
@@ -26,7 +25,7 @@ const DayInterval=()=>{
                     <div><b>{currentDate.getDate()}</b></div>
                 </div>
                 <div className="time-line">
-                    <div className={currentTime===0 ? "no-event": "present-time-wrapper"}><FontAwesomeIcon icon={faCircle} className="circle-icon" style={{top:parseInt(currentTime)+12}}/> <div className="present-time" style={{top:currentTime}}></div></div>
+                    <div className={currentTime===0 ? "no-event": "present-time-wrapper"} ><FontAwesomeIcon icon={faCircle} className="circle-icon" style={{top:parseInt(currentTime)+12}}/> <div className="present-time" style={{top:currentTime}}></div></div>
                     <DisplayEvent/>
                     {eachHourOfDay.map((day,index)=>{
                         return(

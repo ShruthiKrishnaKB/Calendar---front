@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import './CreateUpdateModal.scss';
+import { format } from "date-fns";
 import moment from "moment";
 import { DataContext } from "../../DataContext/DataContext";
 import { ServiceContext } from "../../DataContext/Services";
@@ -7,6 +8,7 @@ import { ServiceContext } from "../../DataContext/Services";
 const CreateUpdateModal = ()=>{
     const {isEditEvent,currentDate,setErrorPopUp,setOpenCreateModal,setIsEditEvent} = useContext(DataContext);
     const {editEvent,createEvents}= useContext(ServiceContext);
+    const [errorValidate,setErrorValidate] = useState('');
     const handleTitle=()=>{
         return isEditEvent ? isEditEvent[0].eventName : '';
     }
@@ -26,6 +28,14 @@ const CreateUpdateModal = ()=>{
         setOpenCreateModal(false);
         setIsEditEvent('');
     }
+    const validateForm=(newEvent)=>{
+        let isFormValid=true;
+        if(newEvent.eventName.trim()==="" || newEvent.eventDate.trim()==="" || newEvent.startTimeHrMin.trim()==="" || newEvent.endTimeHrMin.trim()===""){
+            isFormValid = false;
+            setErrorValidate("Please fill out this field");
+        }
+        return isFormValid;
+    }
     const [title,setTitle]=useState(handleTitle());
     const [eventDate,setEventDate] = useState(handleEventDate());
     const [startTime,setStartTime] = useState(handleStartTime());
@@ -39,13 +49,10 @@ const CreateUpdateModal = ()=>{
             endTimeHrMin:endTime,     
             descriptionOfEvent:description,
         }
-        if(newEvent.eventName.trim()!=="" && newEvent.startTimeHrMin.trim()!=="" && newEvent.endTimeHrMin.trim()!==""){
+        if(validateForm(newEvent)){
             moment(newEvent.eventDate+' ' +newEvent.startTimeHrMin,'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm') >= moment(new Date()).format('YYYY-MM-DD HH:mm')? (isEditEvent ? editEvent(newEvent) :  createEvents(newEvent)):setErrorPopUp("Cannot create events for the past")
             setOpenCreateModal(false);
             setIsEditEvent('');
-        }
-        else{
-            setErrorPopUp("Please fill out all the fields");
         }
     }
     return(
@@ -58,20 +65,29 @@ const CreateUpdateModal = ()=>{
                     </div>
                     <form className="modal-body" onSubmit={isSubmit}>
                         <div>
-                            <label>Event Title</label>
+                            <label>Event Title<span>*</span></label>
+                            <div className="input-error-wrapper">
                             <input type='text' value={title} onChange={(e)=>setTitle(e.target.value)} required/>
+                            {errorValidate && title.trim()==="" && <span className="form-validation">{errorValidate}</span>}
+                            </div>
                         </div>
                         <div>
-                            <label>Event Date</label>
-                            <input type='date' value={eventDate} onChange={(e)=>{setEventDate(e.target.value)}} required/>
+                            <label>Event Date<span>*</span></label>
+                            <div className="input-error-wrapper">
+                            <input type='date' value={eventDate} onChange={(e)=>{setEventDate(e.target.value)}} min={format(new Date(),"yyyy-LL-dd")} required/>
+                            {errorValidate && eventDate.trim()==="" && <span className="form-validation">{errorValidate}</span>}</div>
                         </div>
                         <div>
-                            <label>From Time</label>
+                            <label>From Time<span>*</span></label>
+                            <div className="input-error-wrapper">
                             <input type='time' value={startTime} onChange={(e)=>{setStartTime(e.target.value)}} required/>
+                            {errorValidate && startTime.trim()==="" && <span className="form-validation">{errorValidate}</span>}</div>
                         </div>
                         <div>
-                            <label>To Time</label>
+                            <label>To Time<span>*</span></label>
+                            <div className="input-error-wrapper">
                             <input type='time' value={endTime} onChange={(e)=>{setEndTime(e.target.value)}} required/>
+                            {errorValidate && endTime.trim()==="" && <span className="form-validation">{errorValidate}</span>}</div>
                         </div>
                         <div>
                             <label>Description</label>

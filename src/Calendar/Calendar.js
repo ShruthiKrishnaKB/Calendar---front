@@ -20,7 +20,6 @@ const Calendar =()=>{
         setCurrentDate(clickDate);
     }
     const DaysOfWeek =["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
-
     return(
             <div className='calendar-view'>
                 <div className='calendar-days'>
@@ -42,7 +41,7 @@ const Calendar =()=>{
                                                 const eventTitle = filterItem.eventName;
                                                 return(
                                                     <div className='event-month-view-wrapper' key={index}>
-                                                    <div className="event-month-view"> {eventTitle.length>15 ? eventTitle.substring(0,14)+"..." : eventTitle}</div>
+                                                    <div className="event-month-view"> {eventTitle.length>15 ? eventTitle.substring(0,12)+"..." : eventTitle}</div>
                                                     </div>
                                                 )})}
                                             {filterEvent && filterEvent.length>=3 &&
